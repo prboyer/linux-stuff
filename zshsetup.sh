@@ -1,8 +1,8 @@
 #!/bin/bash
 sudo apt install zsh git -y
 echo Dependencies installed.
-echo Configure Shell
-chsh --shell /etc/zsh
+#echo Configure Shell
+#chsh --shell /etc/zsh
 echo Configuring Zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
