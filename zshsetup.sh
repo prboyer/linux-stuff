@@ -12,6 +12,8 @@ git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM
 cp -f ./.zshrc  ~/
 cp ./.bash_aliases ~/
 
+echo Load new Zsh settings
+source .zshrc
 #echo Install a Nerd Font
 # you can modify this if you want a different font.
 #git clone https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/RobotoMono/Regular
