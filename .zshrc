@@ -112,8 +112,8 @@ source /home/gerhartz/.bash_aliases
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-#Setting GUI Display
+#Setting GUI Display for WSL
 export DISPLAY=:0
 
-#open hom directory
+#open home directory for WSL
 cd
