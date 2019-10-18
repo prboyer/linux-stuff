@@ -22,7 +22,7 @@ sudo apt-get install code # or code-insiders
 sudo snap install --classic code 
 
 echo Install Remmina Remote Desktop
-sudo apt-add-repository ppa:remmina-ppa-team/remmina-next
+sudo apt-add-repository ppa:remmina-ppa-team/remmina-next -y
 sudo apt update
 sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret remmina-plugin-spice
 
