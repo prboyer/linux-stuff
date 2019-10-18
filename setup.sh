@@ -18,6 +18,9 @@ sudo apt-get install apt-transport-https
 sudo apt-get update
 sudo apt-get install code # or code-insiders
 
+# trying to install via snap
+sudo snap install --classic code 
+
 echo Install Remmina Remote Desktop
 sudo apt-add-repository ppa:remmina-ppa-team/remmina-next
 sudo apt update
@@ -30,6 +33,26 @@ sudo dpkg -i ./*.deb
 rm -rf ./GlobalProtect*
 rm ./manifest
 rm ./relinfo
+
+echo Install PowerShell
+# Download the Microsoft repository GPG keys
+wget -q ./ https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
+
+# Register the Microsoft repository GPG keys
+sudo dpkg -i packages-microsoft-prod.deb
+
+# Update the list of products
+sudo apt-get update
+
+# Enable the "universe" repositories
+sudo add-apt-repository universe
+
+# Install PowerShell
+sudo apt-get install -y powershell
+
+#if fails try via snap
+# Install PowerShell
+sudo snap install powershell --classic
 
 echo Install ZSH
 sh ./zshsetup.sh
