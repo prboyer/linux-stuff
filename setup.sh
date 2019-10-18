@@ -25,3 +25,11 @@ sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret remmina-plugin
 
 echo Install PaloAlto GlobalProtect
 tar -xvzf ./PanGPLinux-4.1.9-c3.tgz
+sudo dpkg -i ./*.deb
+# post-instal cleanup
+rm -rf ./GlobalProtect*
+rm ./manifest
+rm ./relinfo
+
+echo Install ZSH
+sh ./zshsetup.sh
