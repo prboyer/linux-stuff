@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/gerhartz/.oh-my-zsh"
+  export ZSH="/home/pboyer2/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -81,7 +81,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-DEFAULT_USER="gerhartz"
+DEFAULT_USER="pboyer2"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -105,7 +105,7 @@ DEFAULT_USER="gerhartz"
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-source /home/gerhartz/.bash_aliases
+source /home/pboyer2/.bash_aliases
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
