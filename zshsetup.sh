@@ -3,8 +3,9 @@ echo Installing Dependencies
 sudo apt install zsh git -y
 echo Dependencies installed.
 
-echo Configure Shell
-chsh --shell /bin/zsh
+#echo Configure Shell
+# this will prompt user for password
+#chsh --shell /bin/zsh
 
 echo Configuring ZSH
 sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
