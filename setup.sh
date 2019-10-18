@@ -1,5 +1,9 @@
 #!/bin/bash
-echo Insall Updates
+echo Install Git
+sudo apt install cowsay
+cowthink "how'd you clone the repo without git?"
+
+echo Install Updates
 sudo apt update && sudo apt upgrade
 
 echo Remove Firefox
