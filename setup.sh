@@ -24,5 +24,4 @@ sudo apt update
 sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret remmina-plugin-spice
 
 echo Install PaloAlto GlobalProtect
-#wget ~/Downloads https://www.net.wisc.edu/vpn/clients/PanGPLinux-4.1.9-c3.tgz
-#tar -xvf ~/Downloads/PanGPL*.tgz
+tar -xvzf ./PanGPLinux-4.1.9-c3.tgz
