@@ -20,16 +20,23 @@ cp ./.bash_aliases ~/
 echo Install a Nerd Font
 # you can modify this if you want a different font.
 mkdir -p ~/.local/share/fonts
-cd ~/.local/share/fonts && curl -fLo "Roboto Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/RobotoMono/Regular/complete/Roboto%20Mono%20Nerd%20Font%20Complete.ttf
-wget ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/RobotoMono/Regular/complete/Roboto%20Mono%20Nerd%20Font%20Complete.ttf 
+chmod -R 755 ~/.local/share/fonts
 
-#echo Install PowerLine Font
+# Install the font from GitHub ** isn't working...
+#cd ~/.local/share/fonts && curl -fLo "Roboto Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/RobotoMono/Regular/complete/Roboto%20Mono%20Nerd%20Font%20Complete.ttf
+#wget ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/RobotoMono/Regular/complete/Roboto%20Mono%20Nerd%20Font%20Complete.ttf 
+
+#echo Install PowerLine Font ** isn't working either
 # instrucitons here: https://powerline.readthedocs.io/en/latest/installation/linux.html#fonts-installation
 #cd ~/.local/share/fonts
 #wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+
+
+
+
 fc-cache -vf ~/.local/share/fonts/
 
-echo Install PowerLine Symbols
+#echo Install PowerLine Symbols
 #mkdir -p ~/.config/fontconfig/conf.d
 #cd ~/.config/fontconfig/conf.d/ && wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
 
