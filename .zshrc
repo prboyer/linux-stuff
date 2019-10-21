@@ -111,9 +111,10 @@ source /home/pboyer2/.bash_aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
+# ONLY NEEDED IN WSL
 #Setting GUI Display for WSL
-export DISPLAY=:0
+#export DISPLAY=:0
 
 #open home directory for WSL
-cd
+#cd
+	
