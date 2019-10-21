@@ -20,7 +20,10 @@ cp ./.bash_aliases ~/
 echo Install a Nerd Font
 # you can modify this if you want a different font.
 mkdir -p ~/.local/share/fonts
-chmod -R 755 ~/.local/share/fonts
+chmod 755 ~/.local/share/fonts
+cp ./RobotoMonoNerdFontCompleteMono.ttf ~/.local/share/fonts
+chmod 644 ~/.local/share/fonts/*
+fc-cache -vf ~/.local/share/fonts/
 
 # Install the font from GitHub ** isn't working...
 #cd ~/.local/share/fonts && curl -fLo "Roboto Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/RobotoMono/Regular/complete/Roboto%20Mono%20Nerd%20Font%20Complete.ttf
@@ -30,11 +33,6 @@ chmod -R 755 ~/.local/share/fonts
 # instrucitons here: https://powerline.readthedocs.io/en/latest/installation/linux.html#fonts-installation
 #cd ~/.local/share/fonts
 #wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
-
-
-
-
-fc-cache -vf ~/.local/share/fonts/
 
 #echo Install PowerLine Symbols
 #mkdir -p ~/.config/fontconfig/conf.d
