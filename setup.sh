@@ -9,6 +9,12 @@ sudo apt update && sudo apt upgrade
 echo Remove Firefox
 sudo apt remove firefox
 
+echo Install OpenSSH
+sudo apt install openssh-server
+
+echo Install Net Tools
+sudo apt install net-tools
+
 echo Install Chromium
 sudo apt install chromium-browser
 
