@@ -14,6 +14,8 @@ A collection of ~~my~~ linux scripts and files _forked from [codeman6100.](https
   * PowerShell Core
   * ZSH 
   * Git
+  * Net Tools
+  * OpenSSH Server
 * Configures the Shell
   * Oh-my-ZSH
   * Theme Downloads
@@ -22,4 +24,4 @@ A collection of ~~my~~ linux scripts and files _forked from [codeman6100.](https
 ## Installation
 1. Clone the repo
 2. Change your working directory to "./linux-stuff"
-3. Run "sh ./setup.sh" to begin the process 
+3. Run "sh ./setup.sh" to begin the process
