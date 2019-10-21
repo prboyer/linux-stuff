@@ -15,8 +15,9 @@ sudo apt install openssh-server
 echo Install Net Tools
 sudo apt install net-tools
 
-echo Install Chromium
-sudo apt install chromium-browser
+echo Install Chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 echo Install VSCode
 # see https://code.visualstudio.com/docs/setup/linux for more information
@@ -64,9 +65,14 @@ sudo apt-get install -y powershell
 # Install PowerShell
 sudo snap install powershell --classic
 
+echo Cleanup
+rm -f packages*
+
 echo Copy RT Scripts
 cp ./rt.sh ~/Documents
 chmod +x ~/Documents/rt.sh
 
 echo Install ZSH
 sh ./zshsetup.sh
+
+
