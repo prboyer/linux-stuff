@@ -43,5 +43,8 @@ echo Restart your terminal for changes to take effect.
 
 reset
 
+chsh -s /bin/zsh
+zsh
+
 #reset X windowing
 #sudo systemctl restart display-manager
