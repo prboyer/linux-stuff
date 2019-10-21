@@ -65,5 +65,10 @@ sudo apt-get install -y powershell
 # Install PowerShell
 sudo snap install powershell --classic
 
+echo Cleanup
+rm -f packages.*
+
 echo Install ZSH
 sh ./zshsetup.sh
+
+
