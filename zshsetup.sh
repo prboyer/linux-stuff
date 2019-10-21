@@ -44,4 +44,4 @@ echo Restart your terminal for changes to take effect.
 reset
 
 #reset X windowing
-sudo systemctl restart display-manager
+#sudo systemctl restart display-manager
