@@ -8,6 +8,7 @@ A collection of ~~my~~ linux scripts and files _forked from [codeman6100.](https
 * Removes Unecessary Applications
   * Firefox (bye!)
 * Installs New Applications
+  * Google Chrome
   * Visual Studio Code
   * Remmina (Remote Desktop)
   * Palo Alto GlobalProtect
@@ -21,6 +22,9 @@ A collection of ~~my~~ linux scripts and files _forked from [codeman6100.](https
   * Theme Downloads
   * Font Downloads
   * Application of aliases
+* Custom Automation
+  * RT Bookmarklet
+  * Automated Launch at Sign In
 ## Installation
 1. Clone the repo
 2. Change your working directory to "./linux-stuff"

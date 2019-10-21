@@ -68,6 +68,10 @@ sudo snap install powershell --classic
 echo Cleanup
 rm -f packages*
 
+echo Copy RT Scripts
+cp ./rt.sh ~/Documents
+chmod +x ~/Documents/rt.sh
+
 echo Install ZSH
 sh ./zshsetup.sh
 
