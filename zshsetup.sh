@@ -20,7 +20,7 @@ cp ./.bash_aliases ~/
 echo Install a Nerd Font
 # you can modify this if you want a different font.
 mkdir -p ~/.local/share/fonts
-cd ~/.local/share/fonts && curl -fLo "Roboto Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/RobotoMono/Regular/complete/Roboto%20Mono%20Nerd%20Font%20Complete%20Mono.ttf
+cd ~/.local/share/fonts && curl -fLo "Roboto Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/RobotoMono/Regular/complete/Roboto%20Mono%20Nerd%20Font%20Complete.ttf
 wget ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/RobotoMono/Regular/complete/Roboto%20Mono%20Nerd%20Font%20Complete.ttf 
 
 #echo Install PowerLine Font
