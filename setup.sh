@@ -85,5 +85,3 @@ sudo cp ~/Documents/rt.sh /usr/bin/rt
 
 echo Install ZSH
 sh ./zshsetup.sh
-
-
