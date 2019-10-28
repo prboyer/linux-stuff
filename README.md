@@ -24,7 +24,7 @@ A collection of ~~my~~ linux scripts and files _forked from [codeman6100.](https
   * Theme Downloads
   * Font Downloads
   * Application of aliases
-* Custom Automation _([prboyer/linux-stuff:work](https://github.com/prboyer/linux-stuff/tree/work) only)_
+* Custom Automation
   * RT Bookmarklet
   * ~~Automated Launch at Sign In~~
 ## Installation
