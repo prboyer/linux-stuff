@@ -13,10 +13,12 @@ A collection of ~~my~~ linux scripts and files _forked from [codeman6100.](https
   * Remmina (Remote Desktop)
   * Palo Alto GlobalProtect
   * PowerShell Core
-  * ZSH 
+  * ZSH
+  * Oh My Zsh!
   * Git
   * Net Tools
   * OpenSSH Server
+  * Etcher
 * Configures the Shell
   * Oh-my-ZSH
   * Theme Downloads
