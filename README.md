@@ -24,9 +24,9 @@ A collection of ~~my~~ linux scripts and files _forked from [codeman6100.](https
   * Theme Downloads
   * Font Downloads
   * Application of aliases
-* Custom Automation
+* Custom Automation _([prboyer/linux-stuff:work](https://github.com/prboyer/linux-stuff/tree/work) only)_
   * RT Bookmarklet
-  * Automated Launch at Sign In
+  * ~~Automated Launch at Sign In~~
 ## Installation
 1. Clone the repo
 2. Change your working directory to "./linux-stuff"
