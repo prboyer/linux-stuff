@@ -17,10 +17,10 @@ echo Finish Installing Etcher
 sudo apt install etcher-electron
 
 echo Remove Firefox
-sudo apt remove firefox
+sudo apt remove firefox -y 
 
 echo Install OpenSSH
-sudo apt install openssh-server
+sudo apt install openssh-server -y
 
 echo Install Net Tools
 sudo apt install net-tools
@@ -78,10 +78,15 @@ sudo snap install powershell --classic
 echo Cleanup
 rm -f packages*
 
-#echo Copy RT Script
-#cp ./rt.sh ~/Documents
-#chmod +x ~/Documents/rt.sh
-#sudo cp ~/Documents/rt.sh /usr/bin/rt
+# Copy the RT binary
+echo Copy RT Script
+cp ./rt.sh ~/Documents
+chmod +x ~/Documents/rt.sh
+sudo cp ~/Documents/rt.sh /usr/bin/rt
 
+# install GParted
+sudo apt install GParted -y
+
+# run the ZSH installation
 echo Install ZSH
 sh ./zshsetup.sh

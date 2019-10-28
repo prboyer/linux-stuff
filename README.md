@@ -19,6 +19,7 @@ A collection of ~~my~~ linux scripts and files _forked from [codeman6100.](https
   * Net Tools
   * OpenSSH Server
   * Etcher
+  * Gparted
 * Configures the Shell
   * Oh-my-ZSH
   * Theme Downloads
@@ -26,7 +27,7 @@ A collection of ~~my~~ linux scripts and files _forked from [codeman6100.](https
   * Application of aliases
 * Custom Automation
   * RT Bookmarklet
-  * Automated Launch at Sign In
+  * ~~Automated Launch at Sign In~~
 ## Installation
 1. Clone the repo
 2. Change your working directory to "./linux-stuff"
