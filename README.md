@@ -19,6 +19,7 @@ A collection of ~~my~~ linux scripts and files _forked from [codeman6100.](https
   * Net Tools
   * OpenSSH Server
   * Etcher
+  * Gparted
 * Configures the Shell
   * Oh-my-ZSH
   * Theme Downloads
