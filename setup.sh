@@ -3,8 +3,18 @@ echo Install Git
 sudo apt install cowsay
 cowthink "how'd you clone the repo without git?"
 
+echo Install Etcher
+echo "deb https://dl.bintray.com/resin-io/debian stable etcher" | sudo tee
+/etc/apt/sources.list.d/etcher.list
+
+Trust Bintray.com GPG key
+$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 379CE192D401AB61
+
 echo Install Updates
 sudo apt update && sudo apt upgrade
+
+echo Finish Installing Etcher
+sudo apt install etcher-electron
 
 echo Remove Firefox
 sudo apt remove firefox
@@ -68,9 +78,10 @@ sudo snap install powershell --classic
 echo Cleanup
 rm -f packages*
 
-echo Copy RT Scripts
+echo Copy RT Script
 cp ./rt.sh ~/Documents
 chmod +x ~/Documents/rt.sh
+sudo cp ~/Documents/rt.sh /usr/bin/rt
 
 echo Install ZSH
 sh ./zshsetup.sh
