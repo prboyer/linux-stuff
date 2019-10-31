@@ -48,7 +48,7 @@ sudo apt update
 sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret remmina-plugin-spice
 
 echo Install PaloAlto GlobalProtect
-tar -xvzf ./PanGPLinux-4.1.9-c3.tgz
+tar -xvzf ./PanGPLinux*.tgz
 sudo dpkg -i ./*.deb
 # post-instal cleanup
 rm -rf ./GlobalProtect*
@@ -75,9 +75,6 @@ sudo apt-get install -y powershell
 # Install PowerShell
 sudo snap install powershell --classic
 
-echo Cleanup
-rm -f packages*
-
 # Copy custom user scripts
 cp ./usr_bin/* /usr/bin
 sudo rm /usr/bin/TEMPLATE
@@ -86,6 +83,11 @@ sudo rm /usr/bin/README
 # install GParted
 sudo apt install GParted -y
 
+# clean up the packages in the working dir extracted by the PanGP.tar
+echo Cleanup
+rm -f packages*
+
+# This has to be the last step in the script, as it launches another
 # run the ZSH installation
 echo Install ZSH
 sh ./zshsetup.sh
