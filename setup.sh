@@ -78,11 +78,10 @@ sudo snap install powershell --classic
 echo Cleanup
 rm -f packages*
 
-# Copy the RT binary
-echo Copy RT Script
-cp ./rt.sh ~/Documents
-chmod +x ~/Documents/rt.sh
-sudo cp ~/Documents/rt.sh /usr/bin/rt
+# Copy custom user scripts
+cp ./usr_bin/* /usr/bin
+sudo rm /usr/bin/TEMPLATE
+sudo rm /usr/bin/README
 
 # install GParted
 sudo apt install GParted -y
