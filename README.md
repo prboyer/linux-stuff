@@ -23,6 +23,8 @@ A collection of ~~my~~ linux scripts and files _forked from [codeman6100.](https
 * Configures the Shell
   * Oh-my-ZSH
   * Theme Downloads
+    * Deault theme is powerlevel9k
+    * See branches for 'bender' and 'rkj-repos'
   * Font Downloads
   * Application of aliases
 * Custom User Binaries (Copied to '/usr/bin')
