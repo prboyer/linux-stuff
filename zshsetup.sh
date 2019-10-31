@@ -21,6 +21,12 @@ cp ./RobotoMonoNerdFontCompleteMono.ttf ~/.local/share/fonts
 chmod 644 ~/.local/share/fonts/*
 fc-cache -vf ~/.local/share/fonts/
 
+
+# copy themes to local folder
+echo copying themes
+cp ./themes/* ~/.oh-my-zsh/themes
+
+
 echo You must change the font of your termianl to the installed Roboto Mono font in order for glyphs to work.  Or comment out the "nerd-font" line in your ~/.zshrc file
 echo Restart your terminal for changes to take effect.
 
