@@ -9,7 +9,7 @@
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 POWERLEVEL9K_MODE='nerdfont-complete'
-ZSH_THEME="bender"
+ZSH_THEME="powerlevel9k/powerlevel9k" #"zeta" #"ys" #"rkj-repos" #"robbyrussell"
 
 #######################################################
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
