@@ -25,9 +25,10 @@ A collection of ~~my~~ linux scripts and files _forked from [codeman6100.](https
   * Theme Downloads
   * Font Downloads
   * Application of aliases
-* Custom Automation
+* Custom User Binaries (Copied to '/usr/bin')
   * RT Bookmarklet
-  * ~~Automated Launch at Sign In~~
+    * ~~Automated Launch at Sign In~~
+  * PanGP Connection
 ## Installation
 1. Clone the repo
 2. Change your working directory to "./linux-stuff"
