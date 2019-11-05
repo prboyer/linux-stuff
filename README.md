@@ -20,6 +20,7 @@ A collection of ~~my~~ linux scripts and files _forked from [codeman6100.](https
   * OpenSSH Server
   * Etcher
   * Gparted
+  * Microsoft Teams for Linux
 * Configures the Shell
   * Oh-my-ZSH
   * Theme Downloads
