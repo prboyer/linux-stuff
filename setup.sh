@@ -75,6 +75,12 @@ sudo apt-get install -y powershell
 # Install PowerShell
 sudo snap install powershell --classic
 
+# install GParted
+sudo apt install GParted -y
+
+# install Microsoft Teams
+sudo snap install teams-for-linux
+
 echo Cleanup
 rm -f packages*
 
@@ -82,9 +88,6 @@ rm -f packages*
 cp ./usr_bin/* /usr/bin
 sudo rm /usr/bin/TEMPLATE
 sudo rm /usr/bin/README
-
-# install GParted
-sudo apt install GParted -y
 
 # run the ZSH installation
 echo Install ZSH
