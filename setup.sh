@@ -81,7 +81,7 @@ sudo apt install GParted -y
 # install Microsoft Teams
 sudo snap install teams-for-linux
 # make a link to the teams binary
-ln -s /snap/bin/teams-for-linux /snap/bin/teams
+sudo ln -s -T /snap/bin/teams-for-linux /snap/bin/teams
 
 echo Cleanup
 rm -f packages*
