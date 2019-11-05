@@ -1,5 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+  export PATH=$HOME/bin:/usr/local/bin:$PATH
+	
+# add /snap/bin to PATH
+  export PATH=$PATH:/snap/bin
 
 # Path to your oh-my-zsh installation.
   export ZSH="/home/pboyer2/.oh-my-zsh"

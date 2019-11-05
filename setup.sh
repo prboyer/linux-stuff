@@ -45,7 +45,7 @@ sudo snap install --classic code
 echo Install Remmina Remote Desktop
 sudo apt-add-repository ppa:remmina-ppa-team/remmina-next -y
 sudo apt update
-sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret remmina-plugin-spice
+sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret remmina-plugin-spice -y
 
 echo Install PaloAlto GlobalProtect
 tar -xvzf ./PanGPLinux-4.1.9-c3.tgz
@@ -75,6 +75,14 @@ sudo apt-get install -y powershell
 # Install PowerShell
 sudo snap install powershell --classic
 
+# install GParted
+sudo apt install GParted -y
+
+# install Microsoft Teams
+sudo snap install teams-for-linux
+# make a link to the teams binary
+ln -s /snap/bin/teams-for-linux /snap/bin/teams
+
 echo Cleanup
 rm -f packages*
 
@@ -82,9 +90,6 @@ rm -f packages*
 cp ./usr_bin/* /usr/bin
 sudo rm /usr/bin/TEMPLATE
 sudo rm /usr/bin/README
-
-# install GParted
-sudo apt install GParted -y
 
 # run the ZSH installation
 echo Install ZSH
