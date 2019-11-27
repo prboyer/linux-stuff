@@ -113,6 +113,7 @@ source /home/pboyer2/.bash_aliases
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ssh-notouch="ssh notouchadm@notouchcenter.ssc.wisc.edu"
 
 # start ssh agent
 eval $(ssh-agent)
