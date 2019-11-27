@@ -12,6 +12,7 @@ git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM
 cp -f ./.zshrc  ~/
 sed -i 's/pboyer2/$USER/g' ~/.zshrc
 cp ./.bash_aliases ~/
+cp ./.zsh_theme_var ~/
 
 echo Install a Nerd Font
 # you can modify this if you want a different font.
