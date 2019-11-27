@@ -108,7 +108,7 @@ DEFAULT_USER="pboyer2"
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-source /home/pboyer2/.bash_aliases
+#source /home/$USER/.bash_aliases
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -116,8 +116,8 @@ source /home/pboyer2/.bash_aliases
 alias ssh-notouch="ssh notouchadm@notouchcenter.ssc.wisc.edu"
 
 # start ssh agent
-eval $(ssh-agent)
-ssh-add ~/.ssh/*.rsa
+eval $(ssh-agent) > /dev/null 2>&1
+ssh-add ~/.ssh/*.rsa > /dev/null 2>&1
 
 # ONLY NEEDED IN WSL
 #Setting GUI Display for WSL
