@@ -33,6 +33,6 @@ echo Restart your terminal for changes to take effect.
 
 reset
 
-echo Changing Shell
-chsh -s /bin/zsh
+#echo Changing Shell
+#chsh -s /bin/zsh
 zsh
