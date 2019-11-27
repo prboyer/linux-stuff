@@ -13,7 +13,7 @@
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 POWERLEVEL9K_MODE='nerdfont-complete'
 #ZSH_THEME="powerlevel9k/powerlevel9k" #"zeta" #"ys" #"rkj-repos" #"robbyrussell"
-ZSH_THEME=\"$(cat .zsh_theme_var)\"
+ZSH_THEME=$(head -n 1 ~/.zsh_theme_var)
 #######################################################
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 #POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir newline vcs)
@@ -113,6 +113,10 @@ source /home/pboyer2/.bash_aliases
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# start ssh agent
+eval $(ssh-agent)
+ssh-add ~/.ssh/*.rsa
 
 # ONLY NEEDED IN WSL
 #Setting GUI Display for WSL
