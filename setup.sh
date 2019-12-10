@@ -93,4 +93,4 @@ sudo rm /usr/bin/README
 
 # run the ZSH installation
 echo Install ZSH
-sh ./zshsetup.sh
+sudo sh ./zshsetup.sh
