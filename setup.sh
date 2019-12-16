@@ -11,10 +11,10 @@ Trust Bintray.com GPG key
 $ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 379CE192D401AB61
 
 echo Install Updates
-sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt upgrade -y
 
 echo Finish Installing Etcher
-sudo apt install etcher-electron
+sudo apt install etcher-electron -y
 
 echo Remove Firefox
 sudo apt remove firefox -y 
@@ -23,7 +23,7 @@ echo Install OpenSSH
 sudo apt install openssh-server -y
 
 echo Install Net Tools
-sudo apt install net-tools
+sudo apt install net-tools -y
 
 echo Install Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
