@@ -22,6 +22,8 @@ cp ./RobotoMonoNerdFontCompleteMono.ttf ~/.local/share/fonts
 chmod 644 ~/.local/share/fonts/*
 fc-cache -vf ~/.local/share/fonts/
 
+# copy theme var file
+cp ./.zsh_theme_var ~
 
 # copy themes to local folder
 echo copying themes
