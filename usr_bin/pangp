@@ -1,4 +1,0 @@
-#!/bin/bash
-##########
-
-globalprotect connect --portal sscc-always-on.vpn.wisc.edu
