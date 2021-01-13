@@ -75,4 +75,4 @@ rm -f packages*
 
 # run the ZSH installation
 echo Install ZSH
-sudo sh ./zshsetup.sh
+sudo sh zshsetup.sh

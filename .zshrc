@@ -3,7 +3,7 @@
 
 # If you come from bash you might have to change your $PATH.
   export PATH=$HOME/bin:/usr/local/bin:$PATH
-	
+
 # add /snap/bin to PATH
   export PATH=$PATH:/snap/bin
 
@@ -15,8 +15,8 @@
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 POWERLEVEL9K_MODE='nerdfont-complete'
-#ZSH_THEME="powerlevel9k/powerlevel9k" #"zeta" #"ys" #"rkj-repos" #"robbyrussell"
-ZSH_THEME=$(head -n 1 ~/.zsh_theme_var)
+ZSH_THEME="powerlevel9k/powerlevel9k" #"zeta" #"ys" #"rkj-repos" #"robbyrussell"
+
 #######################################################
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 #POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir newline vcs)
@@ -107,6 +107,9 @@ DEFAULT_USER="pboyer2"
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+# custom ls behavior
+alias ls="ls -lh --color=always --hyperlink=always"
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -116,7 +119,6 @@ DEFAULT_USER="pboyer2"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ssh-notouch="ssh notouchadm@notouchcenter.ssc.wisc.edu"
 
 # start ssh agent
 eval $(ssh-agent) > /dev/null 2>&1
@@ -125,7 +127,3 @@ ssh-add ~/.ssh/*.rsa > /dev/null 2>&1
 # ONLY NEEDED IN WSL
 #Setting GUI Display for WSL
 #export DISPLAY=:0
-
-#open home directory for WSL
-#cd
-	

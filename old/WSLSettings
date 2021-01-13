@@ -1,6 +1,0 @@
-#ONLY NEEDED IN WSL
-Setting GUI Display for WSL
-export DISPLAY=:0
-
-open home directory for WSL
-cd

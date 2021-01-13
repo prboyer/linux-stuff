@@ -7,31 +7,25 @@ A collection of ~~my~~ linux scripts and files _forked from [codeman6100.](https
   * Update app packages currently installed
 * Removes Unecessary Applications
   * Firefox (bye!)
+  * Thunderbird
 * Installs New Applications
-  * Google Chrome
+  * Microsoft Edge (Chromium)
   * Visual Studio Code
-  * Remmina (Remote Desktop)
-  * Palo Alto GlobalProtect
+  * ~~Remmina (Remote Desktop)~~
   * PowerShell Core
   * ZSH
   * Oh My Zsh!
-  * Git
+  * GParted
   * Net Tools
   * OpenSSH Server
-  * Etcher
-  * Gparted
   * Microsoft Teams for Linux
 * Configures the Shell
   * Oh-my-ZSH
   * Theme Downloads
     * Deault theme is powerlevel9k
-    * See branches for 'bender' and 'rkj-repos'
   * Font Downloads
-  * Application of aliases
-* Custom User Binaries (Copied to '/usr/bin')
-  * RT Bookmarklet
-    * ~~Automated Launch at Sign In~~
-  * PanGP Connection
+    * If using GNOME shell, you'll need to set the font in terminal prefs after installation
+  * Custom aliases & other user features
 ## Installation
 1. Clone the repo
 2. Change your working directory to "./linux-stuff"

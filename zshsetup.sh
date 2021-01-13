@@ -28,10 +28,7 @@ cp ./themes/* ~/.oh-my-zsh/themes
 
 # change the shell to ZSH
 echo Changing Shell
-chsh -s /bin/zsh
-
-# Uncomment if using GNOME terminal
-#gconftool-2 --set /apps/gnome-terminal/profiles/Default/font --type string 
+chsh -s /bin/zsh $USER 
 
 echo You must change the font of your termianl to the installed Roboto Mono font in order for glyphs to work.  Or comment out the "nerd-font" line in your ~/.zshrc file
 echo Restart your terminal for changes to take effect.
