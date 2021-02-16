@@ -126,4 +126,4 @@ ssh-add ~/.ssh/*.rsa > /dev/null 2>&1
 
 # ONLY NEEDED IN WSL
 #Setting GUI Display for WSL
-#export DISPLAY=:0
+export DISPLAY=:0
