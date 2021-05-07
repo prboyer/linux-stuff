@@ -1,35 +1,88 @@
 #!/bin/bash
 
-echo Install Updates
-sudo apt update && sudo apt upgrade -y
+# Initialize variables that control script behavior
+wsl_mode= false;
+no_apps= false;
+update= false;
+
+# Handle command line switches
+while [[ "$1" =~ ^- && ! "$1" == "--" ]]; 
+    do case $1 in
+    -w | --WSL )
+        wsl_mode= true;
+        ;;
+    -n | --no-applications )
+        no_apps= true;
+        ;;
+    -u | --username )
+        shift; username=$1;
+        ;;
+    -t | --theme )
+        shift; theme=$1;
+        ;;
+    -p | --update )
+        no_apps= true;
+        ;;
+    esac; shift; done
+if [[ "$1" == '--' ]]; then 
+    shift; 
+fi
+
+# Install updates only if the parameter is passed
+if [[ $update == true ]]; then
+    echo Install Updates
+    sudo apt update && sudo apt upgrade -y
+fi
 
 # install Snapd
 sudo apt install snapd
 
-echo Remove Firefox
-sudo apt remove firefox -y 
-sudo apt remove thunderbird -y
+# APPLICATION INSTALLS
+if [[ $no_apps == true || $wsl_mode == true ]]; then
+    echo Remove Firefox
+    sudo apt remove firefox -y 
+    sudo apt remove thunderbird -y
 
+    # Microsoft-ify the image!
+    ## Setup
 
-# Microsoft-ify the image!
-## Setup
+    curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+    sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
 
-sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+    sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge-dev.list'
 
-sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge-dev.list'
+    sudo rm microsoft.gpg
 
-sudo rm microsoft.gpg
+    ## Install MS Edge
 
-## Install MS Edge
+    sudo apt update
 
-sudo apt update
+    sudo apt install microsoft-edge-dev
 
-sudo apt install microsoft-edge-dev
+    # Install VS Code from Snapd
+    sudo snap install code --classic
 
-# Install VS Code from Snapd
-sudo snap install code --classic
+    # install Microsoft Teams
+    sudo snap install teams-for-linux
+    # make a link to the teams binary
+    sudo ln -s -T /snap/bin/teams-for-linux /snap/bin/teams
+
+    echo Install OpenSSH
+    sudo apt install openssh-server -y
+
+    echo Install Net Tools
+    sudo apt install net-tools -y
+
+    echo Install Remmina Remote Desktop
+    sudo apt-add-repository ppa:remmina-ppa-team/remmina-next -y
+    sudo apt update
+    sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret remmina-plugin-spice -y
+
+    # install GParted
+    sudo apt install GParted -y
+
+fi
 
 echo Install PowerShell
 # Download the Microsoft repository GPG keys
@@ -51,28 +104,14 @@ sudo apt-get install -y powershell
 # Install PowerShell
 sudo snap install powershell --classic
 
-# install Microsoft Teams
-sudo snap install teams-for-linux
-# make a link to the teams binary
-sudo ln -s -T /snap/bin/teams-for-linux /snap/bin/teams
-
-echo Install OpenSSH
-sudo apt install openssh-server -y
-
-echo Install Net Tools
-sudo apt install net-tools -y
-
-echo Install Remmina Remote Desktop
-sudo apt-add-repository ppa:remmina-ppa-team/remmina-next -y
-sudo apt update
-sudo apt install remmina remmina-plugin-rdp remmina-plugin-secret remmina-plugin-spice -y
-
-# install GParted
-sudo apt install GParted -y
-
 echo Cleanup
 rm -f packages*
 
 # run the ZSH installation
 echo Install ZSH
-sudo sh zshsetup.sh
+
+if [[ $wsl_mode == true ]]; then
+    sudo bash zshsetup.sh -w --username $username --theme $theme
+else
+    sudo bash zshsetup.sh --username $username --theme $theme
+fi;

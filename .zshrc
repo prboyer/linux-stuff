@@ -15,7 +15,8 @@
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 POWERLEVEL9K_MODE='nerdfont-complete'
-ZSH_THEME="powerlevel9k/powerlevel9k" #"zeta" #"ys" #"rkj-repos" #"robbyrussell"
+ZSH_THEME= 
+#"zeta" "ys" "rkj-repos" "robbyrussell" "powerlevel9k/powerlevel9k"
 
 #######################################################
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
@@ -87,7 +88,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-DEFAULT_USER="pboyer2"
+DEFAULT_USER
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -121,9 +122,5 @@ alias ls="ls -lh --color=always --hyperlink=always"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # start ssh agent
-eval $(ssh-agent) > /dev/null 2>&1
-ssh-add ~/.ssh/*.rsa > /dev/null 2>&1
-
-# ONLY NEEDED IN WSL
-#Setting GUI Display for WSL
-export DISPLAY=:0
+eval $(ssh-agent) > /dev/null 
+ssh-add ~/.ssh/*.rsa > /dev/null 

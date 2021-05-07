@@ -1,4 +1,25 @@
 #!/bin/bash
+
+# Initialize variables that control script behavior
+local wsl_mode=false;
+
+# Handle command line switches
+while [[ "$1" =~ ^- && ! "$1" == "--" ]]; 
+    do case $1 in
+    -w | --WSL )
+        wsl_mode=true;
+        ;;
+    -t | --theme )
+        shift; theme=$1;
+        ;;
+    -u | --username )
+        shift; username=$1
+        ;;
+    esac; shift; done
+if [[ "$1" == '--' ]]; then 
+    shift; 
+fi
+
 echo Installing Dependencies
 sudo apt install zsh git -y
 echo Dependencies installed.
@@ -10,9 +31,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 cp -f .zshrc  ~/
-sed -i 's/pboyer2/$USER/g' ~/.zshrc
-#cp ./.bash_aliases ~/
 
+echo Update zshrc With Username 
+sed -i "s/DEFAULT_USER/DEFAULT_USER=$username/g" ~/.zshrc
 
 echo Install a Nerd Font
 # you can modify this if you want a different font.
@@ -26,9 +47,25 @@ fc-cache -vf ~/.local/share/fonts/
 echo copying themes
 cp ./themes/* ~/.oh-my-zsh/themes
 
+# set the theme
+sed -i "s/ZSH_THEME=/ZSH_THEME=\"$theme\"/gi" ~/.zshrc
+
+if [[ $wsl_mode == true ]]; then
+echo "
+
+# ONLY NEEDED IN WSL
+#Setting GUI Display for WSL
+export DISPLAY=:0
+
+" >> ~/.zshrc
+fi 
+
 # change the shell to ZSH
 echo Changing Shell
-chsh -s /bin/zsh $USER 
+chsh -s /bin/zsh $USER;
 
-echo You must change the font of your termianl to the installed Roboto Mono font in order for glyphs to work.  Or comment out the "nerd-font" line in your ~/.zshrc file
-echo Restart your terminal for changes to take effect.
+echo "You must change the font of your terminal to the installed Roboto Mono font in order for glyphs to work.  Or comment out the "nerd-font" line in your ~/.zshrc file"
+echo "Restart your terminal for changes to take effect."
+
+# restart the shell
+source ~/.zshrc &>/dev/null
