@@ -21,7 +21,7 @@ while [[ "$1" =~ ^- && ! "$1" == "--" ]];
         shift; theme=$1;
         ;;
     -p | --update )
-        no_apps= true;
+        update= true;
         ;;
     esac; shift; done
 if [[ "$1" == '--' ]]; then 
