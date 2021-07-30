@@ -128,5 +128,5 @@ alias ls="ls -lh --color=always --hyperlink=always"
 alias cls="clear"
 
 # start ssh agent
-eval $(ssh-agent) > /dev/null 
-ssh-add ~/.ssh/*.rsa > /dev/null 
+eval $(ssh-agent) 2>&1 > /dev/null 
+ssh-add -q ~/.ssh/*.rsa 
