@@ -16,7 +16,7 @@
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 POWERLEVEL9K_MODE='nerdfont-complete'
 ZSH_THEME= 
-#"zeta" "ys" "rkj-repos" "robbyrussell" "powerlevel9k/powerlevel9k"
+#"zeta" "ys" "rkj-repos" "robbyrussell" "powerlevel10k/powerlevel10k"
 
 #######################################################
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
@@ -108,9 +108,6 @@ DEFAULT_USER
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# custom ls behavior
-alias ls="ls -lh --color=always --hyperlink=always"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -120,6 +117,12 @@ alias ls="ls -lh --color=always --hyperlink=always"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# custom ls behavior
+alias ls="ls -lh --color=always --hyperlink=always"
+
+# clear the screen
+alias cls="clear"
 
 # start ssh agent
 eval $(ssh-agent) > /dev/null 
