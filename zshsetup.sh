@@ -30,7 +30,10 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
 git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
-cp -f .zshrc  ~/
+
+# copy over custom .zshrc
+echo "Copy over Custom .zshrc file"
+yes | /bin/cp -f .zshrc  ~/.zshrc
 
 echo Update zshrc With Username 
 sed -i "s/DEFAULT_USER/DEFAULT_USER=$username/g" ~/.zshrc
@@ -49,6 +52,7 @@ fc-cache -vf ~/.local/share/fonts/
 # copy themes to local folder
 echo copying themes
 cp ./themes/* ~/.oh-my-zsh/custom/themes
+chmod a-x ~/.oh-my-zsh/custom/themes/*.zsh-theme
 
 # set the theme
 sed -i "s/ZSH_THEME=/ZSH_THEME=\"$theme\"/gi" ~/.zshrc
@@ -65,7 +69,7 @@ fi
 
 # change the shell to ZSH
 echo Changing Shell
-chsh -s /bin/zsh $USER;
+chsh -s /usr/bin/zsh $USER;
 
 echo "You must change the font of your terminal to the installed nerd font in order for glyphs to work.  Or comment out the "nerd-font" line in your ~/.zshrc file"
 echo "Restart your terminal for changes to take effect."
