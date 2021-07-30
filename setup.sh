@@ -35,7 +35,7 @@ if [[ $update == true ]]; then
 fi
 
 # install Snapd
-sudo apt install snapd
+sudo apt install snapd -y &
 
 # APPLICATION INSTALLS
 if [[ $no_apps == true || $wsl_mode == true ]]; then
@@ -92,17 +92,17 @@ wget -q ./ https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft
 sudo dpkg -i packages-microsoft-prod.deb
 
 # Update the list of products
-sudo apt-get update
+sudo apt-get update &
 
 # Enable the "universe" repositories
 sudo add-apt-repository universe
 
 # Install PowerShell
-sudo apt-get install -y powershell
+sudo apt-get install -y powershell &
 
 #if fails try via snap
 # Install PowerShell
-sudo snap install powershell --classic
+#sudo snap install powershell --classic
 
 echo Cleanup
 rm -f packages*
