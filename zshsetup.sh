@@ -28,7 +28,7 @@ echo Configuring ZSH
 sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
 git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 cp -f .zshrc  ~/
 
@@ -45,7 +45,7 @@ fc-cache -vf ~/.local/share/fonts/
 
 # copy themes to local folder
 echo copying themes
-cp ./themes/* ~/.oh-my-zsh/themes
+cp ./themes/* ~/.oh-my-zsh/custom/themes
 
 # set the theme
 sed -i "s/ZSH_THEME=/ZSH_THEME=\"$theme\"/gi" ~/.zshrc
