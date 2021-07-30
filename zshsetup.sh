@@ -39,7 +39,7 @@ echo Install a Nerd Font
 # you can modify this if you want a different font.
 mkdir -p ~/.local/share/fonts
 chmod 755 ~/.local/share/fonts
-curl https://github.com/romkatv/powerlevel10k-media/blob/a8eabbf488aca082617f84b3ce408b57f034e166/MesloLGS%20NF%20Regular.ttf -o ~/.local/share/fonts/MesloLGS_NF.ttf &
+curl https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/MesloLGS%20NF%20Regular.ttf -o ~/.local/share/fonts/MesloLGS\ NF\ Regular.ttf &
 chmod 644 ~/.local/share/fonts/*
 fc-cache -vf ~/.local/share/fonts/
 
