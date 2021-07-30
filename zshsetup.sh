@@ -64,7 +64,7 @@ fi
 echo Changing Shell
 chsh -s /bin/zsh $USER;
 
-echo "You must change the font of your terminal to the installed Roboto Mono font in order for glyphs to work.  Or comment out the "nerd-font" line in your ~/.zshrc file"
+echo "You must change the font of your terminal to the installed nerd font in order for glyphs to work.  Or comment out the "nerd-font" line in your ~/.zshrc file"
 echo "Restart your terminal for changes to take effect."
 
 # restart the shell
