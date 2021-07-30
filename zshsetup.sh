@@ -43,6 +43,9 @@ curl https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/MesloL
 chmod 644 ~/.local/share/fonts/*
 fc-cache -vf ~/.local/share/fonts/
 
+# FONT IN WSL
+# You need to install the .ttf font in Windows manually. Then in the windows terminal JSON settings, set 'fontFace':"MesloLGS NF"; This will enable glyphs
+
 # copy themes to local folder
 echo copying themes
 cp ./themes/* ~/.oh-my-zsh/custom/themes
