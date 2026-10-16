@@ -1,13 +1,23 @@
 #! /bin/bash
 
-# Install Vim
-sudo dnf install -y vim
+# Install linux pacakges that are already hosted in the Fedora repos
+FEDORA_PACKAGES=(
+    git
+    git-lfs
+    gh
+    bat
+    htop
+    tmux
+    nmap
+    vim
+    gimp
+    ffmpeg
+    dos2unix
+    ghostscript
+    pdfgrep
+);
 
-# Install tmux
-sudo dnf install -y tmux
-
-# Install nmap
-sudo dnf install -y nmap
+sudo dnf install -y "${FEDORA_PACKAGES[@]}"
 
 # Install Microsoft apps
 source /etc/os-release
@@ -51,17 +61,14 @@ sudo dnf install -y code
 ## Install PowerShell
 sudo dnf install -y https://github.com/PowerShell/PowerShell/releases/download/v7.6.7/powershell-7.6.7-1.rh.x86_64.rpm
 
-# Install Remmina RDP
-sudo dnf install -y remmina
+## Install Microsoft fonts
+sudo yum install -y curl cabextract xorg-x11-font-utils fontconfig && sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
 # Install Discord
 sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
 https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 sudo dnf update -y
 sudo dnf install -y discord
-
-# Install GIMP
-sudo dnf install -y gimp
 
 # Install Spotify
 sudo dnf install -y lpf-spotify-client
@@ -71,18 +78,8 @@ lpf update < yes
 sudo rpm --import https://downloads.1password.com/linux/keys/1password.asc
 sudo sh -c 'echo -e "[1password]\nname=1Password Stable Channel\nbaseurl=https://downloads.1password.com/linux/rpm/stable/\$basearch\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://downloads.1password.com/linux/keys/1password.asc" > /etc/yum.repos.d/1password.repo'
 
-sudo dnf install -y 1password
+sudo dnf install -y 1password 1password-cli
+
 
 # Install X11 for RDP
 sudo dnf install plasma-workspace-x11
-
-# if [ ! -d ~/.config/systemd/user/app-org.kde.krdpserver.service.d ]; then
-#     mkdir ~/.config/systemd/user/app-org.kde.krdpserver.service.d
-# fi
-
-# cat <<EOF > ~/.config/systemd/user/app-org.kde.krdpserver.service.d/override.conf
-# [Service]
-# NoNewPrivileges=false
-# EOF
-
-# systemctl --user daemon-reload && systemctl --user restart app-org.kde.krdpserver.service
