@@ -89,13 +89,13 @@ plugins=(
     colorize
     firewalld
     terraform
-    zoxide
     fzf
     vscode
     colored-man-pages
-	command-not-found
-	zsh-autosuggestions
-	zsh-syntax-highlighting
+    command-not-found
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    
 )
 
 source $ZSH/oh-my-zsh.sh
