@@ -3,9 +3,8 @@
 # Install ZSH
 sudo dnf install -y zsh
 
-# Install Z Oxide
-sudo dnf install -y zoxide fzf
-zoxide init zsh > $ZSH/custom/zoxide.conf.zsh
+# Copy .zshrc file from .env/
+cp -f ../../.env/.zshrc /home/$USER/.zshrc
 
 # Install Oh-My-ZSH
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
@@ -20,3 +19,6 @@ sudo tar -xzf ./NerdFont_Powerlevel10k.tar.gz -C /usr/local/share/fonts/ && sudo
 # Install Powerlevel10k theme
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 
+# Install Z Oxide
+sudo dnf install -y zoxide fzf
+zoxide init zsh >> /home/$USER/.zshrc
