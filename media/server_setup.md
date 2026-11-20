@@ -1,45 +1,60 @@
 # Fedora Server Setup Instructions
+This document includes inscrutions for setting up a home media server
 
-These are the steps that were taken to setup the server
-
-1. Set the hostname of the system with `hostnamectl`
-1. Set the system chasis type with `hostnamectl`
-1. Connect to network (WiFi) from terminal
+## Basic Setup
+1. Set the hostname of the system
     ```bash
-    # List available WiFi networks
-    nmcli device wifi list
-
-    # Connect to network
-    read -s -p 'Wifi Password: ' WIFI_PASSWORD;
-    nmcli device wifi "<SSID>" password $WIFI_PASSWORD
-
-    # Disconnect Network - get interface name, then use 'disconnect' command
-    nmcli device status;
-    nmcli device disconnect wlp2s0 
+    hostnamectl hostname my-host
     ```
-1. Run `sudo dnf update -y` to update sources
-1. Change permissions on `/srv/` directory
+1. Set the system chasis type
     ```bash
+    hostnamectl chassis desktop
+    ```
+    1. Get accepted "types" via
+        ```bash
+        man hostnamectl | grep chassis
+        ```
+## Wireless Network Configuration
+```bash
+# List available WiFi networks
+nmcli device wifi list
+
+# Connect to network
+read -s -p 'Wi-Fi Password: ' WIFI_PASSWORD;
+nmcli device wifi "<SSID>" password $WIFI_PASSWORD
+
+# Disconnect Network - get interface name, then use 'disconnect' command
+nmcli device status;
+nmcli device disconnect wlp2s0
+```
+## Configure Docker Directory and Container Service
+1. Create `/srv/` directory to store `docker-compose` files
+    ```bash
+    sudo mkdir -p /srv/docker;
     sudo chgrp $USER /srv;
     sudo chmod g+rwx, g+s /srv;
     ```
 1. Install Docker and Docker-Compose
     ```bash
     sudo dnf install -y docker docker-compose
-    sudo groupmod -a -U docker $USER
     ```
+1. Add the current user as a member of the _docker_ group so that commands can be passed to the `docker` binary without the need to `sudo`.
+    ```bash
+     sudo groupmod -a -U docker $USER
+     ```
     1. Sign out and sign back in to re-apply the group membership change.
 1. Firewall rules.
-    ```bash
+```bash
   sudo firewall-cmd --zone=FedoraServer --add-port=8123/tcp
-  
+  ```
+
 # plex
 sudo firewall-cmd --zone=FedoraServer --add-port=32400/tcp
 
 sudo firewall-cmd --zone=FedoraServer --add-port=80/tcp
   sudo firewall-cmd --zone=FedoraServer --add-port=443/tcp
   sudo firewall-cmd --zone=FedoraServer --add-port=3000/tcp
-    ```   
+    ```
 
 
 
@@ -139,7 +154,7 @@ HandBrakeCLI -i /tmp/ -o /mnt/prb-fs-1/Media/output.mp4 -e x265 -q 22 --encoder-
 
 1. Use Handbrake to compress large 4K movies
 ```bash
-HandBrakeCLI -i "input.mkv" -o "output.mkv" -f av_mkv -e x265_10bit -q 18 --encoder-preset slow --encoder-profile main10 --all-audio -E copy --audio-fallback ac3 --all-subtitles 
+HandBrakeCLI -i "input.mkv" -o "output.mkv" -f av_mkv -e x265_10bit -q 18 --encoder-preset slow --encoder-profile main10 --all-audio -E copy --audio-fallback ac3 --all-subtitles
 ```
 
 1. Ripping TV Seasons with Handbrake
